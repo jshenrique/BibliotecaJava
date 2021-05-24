@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import strategy.ValidadorEmprestimo;
+
 public abstract class Usuario {
 	private int idUsuario;
 	private String nome;

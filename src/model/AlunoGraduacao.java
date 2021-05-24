@@ -1,5 +1,7 @@
 package model;
 
+import strategy.Validador1;
+
 public class AlunoGraduacao extends Usuario{
 	private int limiteEmprestimo = 3;
 	private int tempoDeEmprestimo = 3;

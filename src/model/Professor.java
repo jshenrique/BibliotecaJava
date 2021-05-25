@@ -24,7 +24,12 @@ public class Professor extends Usuario implements Observador{
 	@Override
 	public void atualizar(Sujeito subject) {
 		registroNotificacoes++;
-		System.out.println("Observador notificado: " + registroNotificacoes);
+		//System.out.println("Observador notificado: " + registroNotificacoes);
+	}
+	
+	public int consultaNotificacao() {
+		System.out.println("Registro de notificações " + registroNotificacoes);
+		return registroNotificacoes;
 	}
 	
 }

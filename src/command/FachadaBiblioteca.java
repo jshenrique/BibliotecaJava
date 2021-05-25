@@ -59,7 +59,13 @@ public class FachadaBiblioteca {
 		Livro l = new Livro();		
 		l = dadosTeste.livro(Integer.parseInt(stringComando[2]));		
 		l.addObservador(observer);
-		System.out.println("Observador registradocom sucesso \nUsuario: " + observer.getNome() + "\nLivro: "+ l.getTitulo());
+		System.out.println("Observador registrado com sucesso \nUsuario: " + observer.getNome() + "\nLivro: "+ l.getTitulo());
 	
 	}
+	
+	public void realizarConsultaNotificacao(String[] stringComando) {
+		Professor observer = (Professor) dadosTeste.usuario(Integer.parseInt(stringComando[1]));
+		observer.consultaNotificacao();
+	}
+	
 }

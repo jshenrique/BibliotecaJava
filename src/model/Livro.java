@@ -162,6 +162,7 @@ public class Livro extends Sujeito{
 	}
 	
 	public void verificaQtdeReservas() {
+		
 		if(this.listarReservasAtivas().size() >= 2) {
 			notificarObservadores();
 		}

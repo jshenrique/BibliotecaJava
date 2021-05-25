@@ -1,9 +1,9 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import observer.Sujeito;
 
-public class Livro {
+public class Livro extends Sujeito{	
 	
 	int id;
 	String titulo;

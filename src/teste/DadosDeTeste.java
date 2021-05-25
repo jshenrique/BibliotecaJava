@@ -73,11 +73,13 @@ public class DadosDeTeste {
 		Exemplar e = new Exemplar();
 		e.setIdExemplar(01);
 		e.setStatus("Disponivel");
+		e.setLivro(l);
 		l.adicionarExemplar(e);
 		
 		Exemplar e12 = new Exemplar();
 		e12.setIdExemplar(02);
 		e12.setStatus("Disponivel");
+		e12.setLivro(l);
 		l.adicionarExemplar(e12);
 		
 		this.livros.add(l);
@@ -93,6 +95,7 @@ public class DadosDeTeste {
 		Exemplar e2 = new Exemplar();
 		e2.setIdExemplar(03);
 		e2.setStatus("Disponivel");
+		e2.setLivro(l2);
 		l2.adicionarExemplar(e);
 		
 		this.livros.add(l2);
@@ -108,6 +111,7 @@ public class DadosDeTeste {
 		Exemplar e3 = new Exemplar();
 		e3.setIdExemplar(04);
 		e3.setStatus("Disponivel");
+		e3.setLivro(l3);
 		l3.adicionarExemplar(e3);
 		this.livros.add(l3);
 		
@@ -122,6 +126,7 @@ public class DadosDeTeste {
 		Exemplar e4 = new Exemplar();
 		e4.setIdExemplar(05);
 		e4.setStatus("Disponivel");
+		e4.setLivro(l4);
 		l4.adicionarExemplar(e4);
 		
 		this.livros.add(l4);
@@ -137,11 +142,13 @@ public class DadosDeTeste {
 		Exemplar e5 = new Exemplar();
 		e5.setIdExemplar(06);
 		e5.setStatus("Disponivel");
+		e5.setLivro(l5);
 		l5.adicionarExemplar(e5);
 		
 		Exemplar e6 = new Exemplar();
 		e6.setIdExemplar(07);
 		e6.setStatus("Disponivel");
+		e6.setLivro(l5);
 		l5.adicionarExemplar(e6);
 
 		this.livros.add(l5);
@@ -166,11 +173,13 @@ public class DadosDeTeste {
 		Exemplar e7 = new Exemplar();
 		e7.setIdExemplar(8);
 		e7.setStatus("Disponivel");
+		e7.setLivro(l7);
 		l7.adicionarExemplar(e7);
 
 		Exemplar e8 = new Exemplar();
 		e8.setIdExemplar(9);
 		e8.setStatus("Disponivel");
+		e8.setLivro(l7);
 		l7.adicionarExemplar(e8);
 		
 		this.livros.add(l7);

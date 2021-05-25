@@ -19,7 +19,7 @@ public class Mensagem {
 	}
 	
 	public void emprestimoAtivoDoExemplar() {
-		System.out.println("Insucesso. O usuario tem um emprestimo em cursor deste exemplar.");
+		System.out.println("Insucesso. O usuario tem um emprestimo em curso deste exemplar.");
 	}
 	
 	//Mensagem reserva negada.

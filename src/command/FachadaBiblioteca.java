@@ -1,6 +1,7 @@
 package command;
 
 import model.Livro;
+import model.Professor;
 import model.Reserva;
 import teste.DadosDeTeste;
 
@@ -33,6 +34,8 @@ public class FachadaBiblioteca {
 	public void realizarReserva(String[] stringComando) {
 		Livro l = new Livro();
 		l = dadosTeste.livro(Integer.parseInt(stringComando[2]));
+		//verificar se tem mais de 2 reservas para notificar profs
+		l.verificaQtdeReservas();
 		Reserva r = new Reserva(dadosTeste.usuario(Integer.parseInt(stringComando[1])), l);
 		r.getUsuario().realizarReserva(r);
 	
@@ -46,5 +49,17 @@ public class FachadaBiblioteca {
 	
 	public void realizarConsultaUsuario(String[] stringComando) {
 		dadosTeste.usuario(Integer.parseInt(stringComando[1])).consultaUsuario();
+	}
+	
+	public void registrarObservador(String[] stringComando) {
+	
+		//usuario
+		Professor observer = (Professor) dadosTeste.usuario(Integer.parseInt(stringComando[1]));
+		//livro
+		Livro l = new Livro();		
+		l = dadosTeste.livro(Integer.parseInt(stringComando[2]));		
+		l.addObservador(observer);
+		System.out.println("Observador registradocom sucesso \nUsuario: " + observer.getNome() + "\nLivro: "+ l.getTitulo());
+	
 	}
 }

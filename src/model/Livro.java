@@ -89,7 +89,7 @@ public class Livro extends Sujeito{
 		System.out.println("Titulo: "+this.getTitulo());
 		System.out.println("Quantidade de reservas: "+this.listarReservasAtivas().size());
 		for(Reserva res : this.reservasAtivas) {
-			System.out.println("Usuarios que resevarao: "+res.getUsuario().getNome());
+			System.out.println("Usuarios que reservaram: "+res.getUsuario().getNome());
 		}
 		
 		System.out.println("-----------------------");
@@ -159,6 +159,13 @@ public class Livro extends Sujeito{
 	
 	public void setAnoPublicacao(int anoPublicacao) {
 		this.anoPublicacao = anoPublicacao;
+	}
+	
+	public void verificaQtdeReservas() {
+		if(this.listarReservasAtivas().size() >= 2) {
+			notificarObservadores();
+		}
+		
 	}
 
 	

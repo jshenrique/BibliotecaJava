@@ -6,6 +6,7 @@ import strategy.Validador2;
 
 public class Professor extends Usuario implements Observador{
 	private int tempoDeEmprestimo = 7;
+	private int registroNotificacoes = 0;
 	
 	public Professor() {
 		 this.validar = new Validador2();
@@ -21,9 +22,9 @@ public class Professor extends Usuario implements Observador{
 	}
 
 	@Override
-	public void notificar(Sujeito subject) {
-		// TODO Auto-generated method stub
-		
+	public void atualizar(Sujeito subject) {
+		registroNotificacoes++;
+		System.out.println("Observador notificado: " + registroNotificacoes);
 	}
 	
 }

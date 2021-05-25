@@ -1,5 +1,5 @@
 package observer;
 
 public interface Observador {
-	public void notificar(Sujeito subject);
+	public void atualizar(Sujeito subject);
 }

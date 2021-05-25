@@ -14,6 +14,7 @@ public class InicializadorComandos {
 		comandos.put("dev", new ComandoRealizarDevolucao());
 		comandos.put("liv", new ComandoRealizarConsultaLivro());
 		comandos.put("usu", new ComandoRealizarConsultaUsuario());
+		comandos.put("obs", new ComandoRegistrarObservador());
 		
 		return comandos;
 		

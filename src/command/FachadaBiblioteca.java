@@ -19,8 +19,14 @@ public class FachadaBiblioteca {
 	}
 	
 	public void realizarEmprestimo(String[] stringComando) {
-		dadosTeste.usuario(Integer.parseInt(stringComando[1])).realizarEmprestimo(
-					dadosTeste.livro(Integer.parseInt(stringComando[2])));
+		try {
+			dadosTeste.usuario(Integer.parseInt(stringComando[1])).realizarEmprestimo(
+						dadosTeste.livro(Integer.parseInt(stringComando[2])));
+		
+		} catch (Exception e) {
+			
+			System.err.println(e.getMessage());
+		}
 		
 	}
 	
@@ -37,7 +43,12 @@ public class FachadaBiblioteca {
 		//verificar se tem mais de 2 reservas para notificar profs
 		l.verificaQtdeReservas();
 		Reserva r = new Reserva(dadosTeste.usuario(Integer.parseInt(stringComando[1])), l);
-		r.getUsuario().realizarReserva(r);
+		
+		try {
+			r.getUsuario().realizarReserva(r);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
 	
 	}
 	
@@ -59,6 +70,7 @@ public class FachadaBiblioteca {
 		Livro l = new Livro();		
 		l = dadosTeste.livro(Integer.parseInt(stringComando[2]));		
 		l.addObservador(observer);
+		
 		System.out.println("Observador registrado com sucesso \nUsuario: " + observer.getNome() + "\nLivro: "+ l.getTitulo());
 	
 	}

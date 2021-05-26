@@ -5,6 +5,6 @@ import model.Usuario;
 
 public interface ValidadorEmprestimo {
 
-	public boolean validar(Usuario usuario, Livro livro);
+	public boolean validar(Usuario usuario, Livro livro) throws Exception;
 	
 }

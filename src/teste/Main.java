@@ -83,8 +83,18 @@ public class Main {
 		//System.out.println(r2.getLivro().getTitulo());
 	
 		//Emprestimo emp = new Emprestimo(u, e1);
-		u.realizarEmprestimo(l);
-		u.realizarEmprestimo(l2);
+		try {
+			u.realizarEmprestimo(l);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			u.realizarEmprestimo(l2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
 		//u.consultaUsuario();
 		//l.consultaLivro();

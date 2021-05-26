@@ -29,6 +29,15 @@ public class DadosDeTeste {
 		return null;
 	}
 	
+	public Professor professor(int codigoUsuario) {
+		for(Usuario u : usuarios) {
+			if(u.getIdUsuario() == codigoUsuario) {
+				return (Professor) u;
+			}
+		}
+		return null;
+	}
+	
 	public Livro livro(int codigoLivro) {
 		for(Livro l : livros) {
 			if(l.getId() == codigoLivro) {

@@ -54,7 +54,7 @@ public class FachadaBiblioteca {
 	public void registrarObservador(String[] stringComando) {
 	
 		//usuario
-		Professor observer = (Professor) dadosTeste.usuario(Integer.parseInt(stringComando[1]));
+		Professor observer = dadosTeste.professor(Integer.parseInt(stringComando[1]));
 		//livro
 		Livro l = new Livro();		
 		l = dadosTeste.livro(Integer.parseInt(stringComando[2]));		
@@ -64,7 +64,7 @@ public class FachadaBiblioteca {
 	}
 	
 	public void realizarConsultaNotificacao(String[] stringComando) {
-		Professor observer = (Professor) dadosTeste.usuario(Integer.parseInt(stringComando[1]));
+		Professor observer = dadosTeste.professor(Integer.parseInt(stringComando[1]));
 		observer.consultaNotificacao();
 	}
 	

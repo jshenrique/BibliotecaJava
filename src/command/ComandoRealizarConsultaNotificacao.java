@@ -1,5 +1,6 @@
 package command;
 
+import system.FachadaBiblioteca;
 
 /** 
  * Representa um Comando concreto para consultar uma notificação - Padrão Command

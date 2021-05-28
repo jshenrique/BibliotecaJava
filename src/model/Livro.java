@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import observer.Sujeito;
+import system.InterfaceUsuario;
 
 /** 
  * Representa um livro
@@ -95,24 +96,24 @@ public class Livro extends Sujeito{
 	
 	public void consultaLivro() {
 		
-		System.out.println("Titulo: "+this.getTitulo());
-		System.out.println("Quantidade de reservas: "+this.listarReservasAtivas().size());
+		InterfaceUsuario.obterInstancia().imprimirMensagem("Titulo: "+this.getTitulo());
+		InterfaceUsuario.obterInstancia().imprimirMensagem("Quantidade de reservas: "+this.listarReservasAtivas().size());
 		for(Reserva res : this.reservasAtivas) {
-			System.out.println("Usuarios que reservaram: "+res.getUsuario().getNome());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Usuarios que reservaram: "+res.getUsuario().getNome());
 		}
 		
-		System.out.println("-----------------------");
-		System.out.println("- Exemplares -");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("-----------------------");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("- Exemplares -");
 		
 		for(Exemplar exemp : this.exemplares) {
-			System.out.println("-----------------------");
-			System.out.println("Codigo do exemplar: "+exemp.getIdExemplar());
-			System.out.println("Status: "+exemp.getStatus());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("-----------------------");
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Codigo do exemplar: "+exemp.getIdExemplar());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Status: "+exemp.getStatus());
 			
 			if(exemp.getStatus() == "Emprestado") {
-				System.out.println("Usuario: "+exemp.getEmprestimo().getUsuario().getNome());
-				System.out.println("Data do Emprestimo: "+exemp.getEmprestimo().getDataEmprestimo());
-				System.out.println("Data de Devolucao: "+exemp.getEmprestimo().getDataParaDevolucao());
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Usuario: "+exemp.getEmprestimo().getUsuario().getNome());
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Data do Emprestimo: "+exemp.getEmprestimo().getDataEmprestimo());
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Data de Devolucao: "+exemp.getEmprestimo().getDataParaDevolucao());
 			}
 		}
 

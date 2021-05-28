@@ -1,12 +1,16 @@
-package command;
+package teste;
 
 import java.io.IOException;
+
+import system.InterfaceUsuario;
 
 public class SistemaBiblioteca {
 
 	public static void main(String[] args) throws IOException {
-		InterfaceUsuario interfaceUsuario = new InterfaceUsuario();
-		interfaceUsuario.realizarLoopInteracaoUsuario();
+		
+		InterfaceUsuario.obterInstancia().realizarLoopInteracaoUsuario();
+		
+		
 	}
 
 }

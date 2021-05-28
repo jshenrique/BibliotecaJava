@@ -31,8 +31,7 @@ public class Professor extends Usuario implements Observador{
 		registroNotificacoes++;
 	}
 	
-	public int consultaNotificacao() {
-		System.out.println("Registro de notificações " + registroNotificacoes);
+	public int consultaNotificacao() {		
 		return registroNotificacoes;
 	}
 	

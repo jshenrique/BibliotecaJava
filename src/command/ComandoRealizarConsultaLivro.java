@@ -1,5 +1,7 @@
 package command;
 
+import system.FachadaBiblioteca;
+
 /** 
  * Representa um Comando concreto para consultar um livro - Padrão Command
  *  

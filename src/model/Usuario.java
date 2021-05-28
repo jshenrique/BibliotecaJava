@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 
 import strategy.ValidadorEmprestimo;
+import system.InterfaceUsuario;
+import util.Mensagem;
 
 /** 
  * Representa um usuário do sistema 
@@ -31,9 +33,9 @@ public abstract class Usuario {
 				emprestimosAtivo.get(i).setStatus("Finalizado");
 				emprestimosAtivo.get(i).getExemplar().setStatus("Disponivel");;
 				
-				System.out.println("Devolucao concluida com sucesso");
-				System.out.println("Usuario: " + this.getNome());
-				System.out.println("Livro: " + emprestimosAtivo.get(i).getExemplar().getLivro().getTitulo());
+				InterfaceUsuario.obterInstancia().imprimirMensagem(Mensagem.DEVOLUCAO_SUCESSO);
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Usuario: " + this.getNome());
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Livro: " + emprestimosAtivo.get(i).getExemplar().getLivro().getTitulo());
 				
 				emprestimosAtivo.get(i).getExemplar().setEmprestimo(null);
 				
@@ -56,9 +58,9 @@ public abstract class Usuario {
 					this.removerReserva(this.verificarReservaDoUsuario(livro));
 				}
 
-				System.out.println("Emprestimo realizado com sucesso");
-				System.out.println("Usuario: " + this.getNome());
-				System.out.println("Livro: " + livro.getTitulo());
+				InterfaceUsuario.obterInstancia().imprimirMensagem(Mensagem.EMPRESTIMO_SUCESSO);
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Usuario: " + this.getNome());
+				InterfaceUsuario.obterInstancia().imprimirMensagem("Livro: " + livro.getTitulo());
 			}
 		
 	}
@@ -82,11 +84,13 @@ public abstract class Usuario {
 		if (reservaAtiva.size() < 3) {
 			this.reservaAtiva.add(reserva);
 			reserva.getLivro().reservarLivro(reserva);
-			System.out.println("Reserva realizada com sucesso:");
-			System.out.println("Usuario: " + this.getNome());
-			System.out.println("Livro: " + reserva.getLivro().getTitulo());
+			
+			InterfaceUsuario.obterInstancia().imprimirMensagem(Mensagem.RESERVA_SUCESSO);
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Usuario: " + this.getNome());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Livro: " + reserva.getLivro().getTitulo());
+			
 		} else {
-			throw new Exception("Insucesso: usuário já possui 3 reservas ativas");
+			throw new Exception(Mensagem.TRES_RESERVAS_ATIVAS_ERRO);
 		}
 	}
 
@@ -135,28 +139,28 @@ public abstract class Usuario {
 		emprestimos.addAll(this.emprestimosAtivo);
 		emprestimos.addAll(this.emprestimosFinalizado);
 
-		System.out.println("- Lista de emprestimos -");
-		System.out.println("------------------------------------");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("- Lista de emprestimos -");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("------------------------------------");
 		for (Emprestimo emp : emprestimos) {
-			System.out.println("Titulo: " + emp.getExemplar().getLivro().getTitulo());
-			System.out.println("Data do emprestimo: " + emp.getDataEmprestimo());
-			System.out.println("Status: " + emp.getStatus());
-			System.out.println("Data de devolucao: " + emp.getDataParaDevolucao());
-			System.out.println("------------------------------------");
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Titulo: " + emp.getExemplar().getLivro().getTitulo());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Data do emprestimo: " + emp.getDataEmprestimo());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Status: " + emp.getStatus());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Data de devolucao: " + emp.getDataParaDevolucao());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("------------------------------------");
 		}
 
-		System.out.println("------------------------------------");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("------------------------------------");
 
 		ArrayList<Reserva> reservas = new ArrayList<Reserva>();
 		reservas.addAll(this.reservaAtiva);
 		reservas.addAll(this.reservaFinalizada);
 
-		System.out.println("- Lista de reservas -");
-		System.out.println("------------------------------------");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("- Lista de reservas -");
+		InterfaceUsuario.obterInstancia().imprimirMensagem("------------------------------------");
 		for (Reserva res : reservas) {
-			System.out.println("Titulo: " + res.getLivro().getTitulo());
-			System.out.println("Data de solicitacao: " + res.getDataReserva());
-			System.out.println("------------------------------------");
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Titulo: " + res.getLivro().getTitulo());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("Data de solicitacao: " + res.getDataReserva());
+			InterfaceUsuario.obterInstancia().imprimirMensagem("------------------------------------");
 		}
 	}
 

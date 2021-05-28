@@ -1,16 +1,27 @@
-package command;
+package system;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+import command.Comando;
+import command.InicializadorComandos;
+
 public class InterfaceUsuario {
+	
+	private static InterfaceUsuario instanciaInterfaceUsuario;
 	
 	private HashMap<String, Comando> comandos;
 	
-	public InterfaceUsuario() {
-		//this.comandos = InicializadorComandos.inicializarComandos();
+	private InterfaceUsuario() {		
+	}
+	
+	public static InterfaceUsuario obterInstancia() {
+		if(instanciaInterfaceUsuario == null){
+			instanciaInterfaceUsuario = new InterfaceUsuario();
+		}
+		return instanciaInterfaceUsuario;
 	}
 	
 	private String obterComandoConsole() throws IOException {
@@ -40,6 +51,14 @@ public class InterfaceUsuario {
 			stringComando = obterComandoConsole();
 		}
 		
+	}
+	
+	public void imprimirMensagem(String mensagem) {
+		System.out.println(mensagem);
+	}
+	
+	public void imprimirMensagemErro(String mensagemErro) {
+		System.err.println(mensagemErro);
 	}
 	
 	

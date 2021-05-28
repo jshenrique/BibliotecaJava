@@ -1,4 +1,4 @@
-package command;
+package system;
 
 import model.Livro;
 import model.Professor;
@@ -29,7 +29,7 @@ public class FachadaBiblioteca {
 						dadosTeste.livro(Integer.parseInt(stringComando[2])));
 		
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			InterfaceUsuario.obterInstancia().imprimirMensagemErro(e.getMessage());
 		}
 		
 	}
@@ -50,7 +50,7 @@ public class FachadaBiblioteca {
 		try {
 			r.getUsuario().realizarReserva(r);
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			InterfaceUsuario.obterInstancia().imprimirMensagemErro(e.getMessage());
 		}
 	}
 	
@@ -71,12 +71,13 @@ public class FachadaBiblioteca {
 		l = dadosTeste.livro(Integer.parseInt(stringComando[2]));		
 		l.addObservador(observer);
 		
-		System.out.println("Observador registrado com sucesso \nUsuario: " + observer.getNome() + "\nLivro: "+ l.getTitulo());
+		InterfaceUsuario.obterInstancia().imprimirMensagem("Observador registrado com sucesso \nUsuario: " + observer.getNome() + "\nLivro: "+ l.getTitulo());
 	
 	}
 	
 	public void realizarConsultaNotificacao(String[] stringComando) {
 		Professor observer = dadosTeste.professor(Integer.parseInt(stringComando[1]));
-		observer.consultaNotificacao();
+		
+		InterfaceUsuario.obterInstancia().imprimirMensagem("Registro de notificações " + observer.consultaNotificacao());
 	}
 }

@@ -1,7 +1,8 @@
  package command;
 
- 
- /** 
+import system.FachadaBiblioteca;
+
+/** 
   * Representa um Comando concreto para reservar um livro - Padrão Command
   *  
   * @since 1.0

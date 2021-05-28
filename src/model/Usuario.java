@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import strategy.ValidadorEmprestimo;
 
+/** 
+ * Representa um usuário do sistema 
+ * 
+ * @since 1.0
+*/
 public abstract class Usuario {
 	private int idUsuario;
 	private String nome;

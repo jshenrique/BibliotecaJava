@@ -1,5 +1,11 @@
 package command;
 
+
+/** 
+ * Representa um Comando concreto para devolver um livro - Padrão Command
+ *  
+ * @since 1.0
+*/
 public class ComandoRealizarDevolucao implements Comando {
 
 	@Override

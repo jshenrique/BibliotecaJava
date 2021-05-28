@@ -2,6 +2,11 @@ package model;
 
 import java.time.LocalDate;
 
+/** 
+ * Representa um empréstimo de livro
+ * 
+ * @since 1.0
+*/
 public class Emprestimo {
 	private int idEmprestimo;
 	private Usuario usuario;

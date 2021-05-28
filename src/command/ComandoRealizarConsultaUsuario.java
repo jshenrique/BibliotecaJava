@@ -1,5 +1,10 @@
 package command;
 
+/** 
+ * Representa um Comando concreto para consultar um usuário - Padrão Command
+ *  
+ * @since 1.0
+*/
 public class ComandoRealizarConsultaUsuario implements Comando {
 
 	@Override

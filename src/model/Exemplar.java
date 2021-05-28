@@ -1,5 +1,10 @@
 package model;
 
+/** 
+ * Representa um exemplar de livro
+ * 
+ * @since 1.0
+*/
 public class Exemplar {
 	private int idExemplar;
 	private Livro livro;

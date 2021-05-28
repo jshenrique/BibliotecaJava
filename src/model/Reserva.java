@@ -2,6 +2,11 @@ package model;
 
 import java.time.LocalDate;
 
+/** 
+ * Representa uma reserva
+ * 
+ * @since 1.0
+*/
 public class Reserva {
 	private int idReserva;
 	private Usuario usuario;

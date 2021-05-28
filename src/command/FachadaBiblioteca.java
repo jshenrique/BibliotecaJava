@@ -5,6 +5,11 @@ import model.Professor;
 import model.Reserva;
 import teste.DadosDeTeste;
 
+/** 
+ * Fachada do Sistema de Biblioteca - Padrões Façade e Singleton
+ *  
+ * @since 1.0
+*/
 public class FachadaBiblioteca {
 	private static FachadaBiblioteca instancia;
 	private DadosDeTeste dadosTeste = new DadosDeTeste();

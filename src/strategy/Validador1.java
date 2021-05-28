@@ -2,7 +2,13 @@ package strategy;
 
 import model.Livro;
 import model.Usuario;
+import util.Mensagem;
 
+/** 
+ * Validador - regras de emprestimo para aluno
+ * Implementação do Padrão Strategy
+ * @since 1.0
+*/
 public class Validador1 implements ValidadorEmprestimo{
 
 	@Override
@@ -10,19 +16,19 @@ public class Validador1 implements ValidadorEmprestimo{
 				
 		if (livro.exemplaresDisponiveisEmprestimo() == false) {
 			
-			throw new Exception("Insucesso: nao existe exemplares disponivel para o livro solicitado.");
+			throw new Exception(Mensagem.EXEMPLAR_INDISPONIVEL_ERRO);
 			
 		} else if (usuario.verificaEmprestimoAtrasado() == false) {
 			
-			throw new Exception("Insucesso: usuario tem emprestimo em atraso.");
+			throw new Exception(Mensagem.USUARIO_EMPRESTIMO_ATRASO_ERRO);
 					
 		} else if (usuario.verificaQuantidadeDeEmprestimoAtivo() == false) {
 		
-			throw new Exception("Insucesso: usuario ja realizou a quantidade maxima de emprestimo simutaneo.");
+			throw new Exception(Mensagem.MAXIMO_EMPRESTIMO_ERRO);
 		
 		} else if (usuario.verificaEmprestimoAtivoDoLivro(livro) == false) {
 			
-			throw new Exception("Insucesso: usuario tem um emprestimo em curso deste exemplar.");
+			throw new Exception(Mensagem.EMPRESTIMO_SIMULTANEO_ERRO);
 			
 		} else if (livro.verificarReservaDoUsuario(usuario) == true) {
 			return true;
@@ -32,7 +38,7 @@ public class Validador1 implements ValidadorEmprestimo{
 		
 		} else {
 			
-			throw new Exception("Insucesso: livro ja foi reservado por outros usuarios.");			
+			throw new Exception(Mensagem.RESERVA_INDISPONIVEL_ERRO);			
 		}
 		
 		

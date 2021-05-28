@@ -4,6 +4,11 @@ import observer.Observador;
 import observer.Sujeito;
 import strategy.Validador2;
 
+/** 
+ * Representa um professor
+ * 
+ * @since 1.0
+*/
 public class Professor extends Usuario implements Observador{
 	private int tempoDeEmprestimo = 7;
 	private int registroNotificacoes = 0;

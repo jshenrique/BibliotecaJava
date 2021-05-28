@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-//SUBJECT
+/** 
+* Representa um Suject - padrão Observer
+* 
+* @since 1.0
+*/
 public abstract class Sujeito {
 	
 	private List<Observador> observers = new ArrayList<Observador>();	

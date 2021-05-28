@@ -3,6 +3,11 @@ package model;
 import java.util.ArrayList;
 import observer.Sujeito;
 
+/** 
+ * Representa um livro
+ * 
+ * @since 1.0
+*/
 public class Livro extends Sujeito{	
 	
 	private int id;

@@ -2,6 +2,11 @@ package model;
 
 import strategy.Validador1;
 
+/** 
+ * Representa um aluno de pós-graduação 
+ * 
+ * @since 1.0
+*/
 public class AlunoPosGraduacao extends Usuario {
 	private int limiteEmprestimo = 4;
 	private int tempoDeEmprestimo = 4;

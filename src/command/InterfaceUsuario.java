@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class InterfaceUsuario {
+	
 	private HashMap<String, Comando> comandos;
 	
 	public InterfaceUsuario() {
@@ -35,8 +36,7 @@ public class InterfaceUsuario {
 		String stringComando = obterComandoConsole();
 		
 		while(!stringComando.equals("sai")) {
-			executarComando(stringComando);
-			
+			executarComando(stringComando);			
 			stringComando = obterComandoConsole();
 		}
 		

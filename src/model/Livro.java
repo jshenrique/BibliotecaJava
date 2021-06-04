@@ -27,13 +27,13 @@ public class Livro extends Sujeito{
 	}
 	
 	public int exemplaresDisponiveis() {
-		int exempalresDisponiveis = 0;
+		int exemplaresDisponiveis = 0;
 		for(Exemplar exem : this.exemplares) {
 			 if(exem.getStatus() == "Disponivel") {
-				 exempalresDisponiveis++;
+				 exemplaresDisponiveis++;
 			 }
 		}
-		return exempalresDisponiveis;
+		return exemplaresDisponiveis;
 	}
 	
 	public boolean exemplaresDisponiveisEmprestimo() {
